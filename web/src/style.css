@@ -1,0 +1,18 @@
+html, body, #app { margin: 0; height: 100%; }
+#map, #cars { position: absolute; inset: 0; width: 100%; height: 100%; }
+#cars { pointer-events: none; }
+#hud {
+  position: absolute; top: 8px; left: 8px; z-index: 10;
+  background: rgba(10, 12, 16, 0.82); color: #eee;
+  font: 13px/1.5 system-ui, sans-serif; padding: 8px 10px; border-radius: 8px;
+  display: flex; flex-direction: column; gap: 6px; max-width: 320px;
+}
+#hud button { cursor: pointer; }
+#lights { display: flex; gap: 6px; }
+.sig { padding: 1px 6px; border-radius: 6px; background: #222; }
+.sig.ns { border: 1px solid #2ecc71; }
+.sig.ew { border: 1px solid #e74c3c; }
+#nogl { position: absolute; inset: 0; background: #111; color: #eee; padding: 12px; }
+#map2d { position: relative; width: 100%; height: 80%; overflow: hidden; background: #0b0e12; }
+#map2d img.tile { position: absolute; width: 256px; height: 256px; }
+#map2d canvas { position: absolute; inset: 0; }

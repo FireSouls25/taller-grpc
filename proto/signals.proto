@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package traffic.signals.v1;
+
+message SubscribeRequest {}
+
+enum Phase {
+  PHASE_UNSPECIFIED = 0;
+  NS_GREEN = 1;
+  NS_YELLOW = 2;
+  EW_GREEN = 3;
+  EW_YELLOW = 4;
+}
+
+message SignalState {
+  string intersection_id = 1;
+  Phase phase = 2;
+  double remaining_s = 3;
+}
+
+message SignalFrame {
+  int64 tick = 1;
+  repeated SignalState states = 2;
+}
+
+message GetPhaseRequest {
+  string intersection_id = 1;
+  int64 tick = 2;
+}
+
+message GetPhaseResponse {
+  string intersection_id = 1;
+  Phase phase = 2;
+  double remaining_s = 3;
+}
+
+service SignalService {
+  rpc SubscribeSignals(SubscribeRequest) returns (stream SignalFrame);
+  rpc GetPhase(GetPhaseRequest) returns (GetPhaseResponse);
+}

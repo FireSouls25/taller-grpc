@@ -1,0 +1,19 @@
+{
+  "name": "traffic-sim-grpc",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "services/*",
+    "web"
+  ],
+  "scripts": {
+    "gen": "bash scripts/gen.sh",
+    "dev:signals": "npm run dev -w signals",
+    "dev:sim": "npm run dev -w sim",
+    "dev:web": "npm run dev -w web",
+    "build": "npm run build -w signals && npm run build -w sim && npm run build -w web"
+  },
+  "devDependencies": {
+    "@bufbuild/buf": "1.73.0"
+  }
+}

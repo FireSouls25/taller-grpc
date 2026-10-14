@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>City Traffic Simulator (gRPC)</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="map"></div>
+      <canvas id="cars"></canvas>
+      <div id="hud">
+        <div>
+          <button id="btn-run">Pause</button>
+          <label>speed <input id="in-speed" type="range" min="0.25" max="4" step="0.25" value="1" /></label>
+          <label>spawn <input id="in-spawn" type="range" min="0" max="4" step="0.5" value="1" /></label>
+        </div>
+        <div id="stats">connecting…</div>
+        <div id="lights"></div>
+      </div>
+      <div id="nogl" hidden>
+        <p>No WebGL2 — 2D fallback mode (raster tiles + canvas).</p>
+        <div id="map2d"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

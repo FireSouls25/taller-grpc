@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package traffic.sim.v1;
+
+message SubscribeRequest {}
+
+message Vehicle {
+  int32 id = 1;
+  double x = 2;
+  double y = 3;
+  double heading_deg = 4;
+  double speed_mps = 5;
+  string color = 6;
+}
+
+message Frame {
+  int64 tick = 1;
+  repeated Vehicle vehicles = 2;
+}
+
+message ControlRequest {
+  optional bool running = 1;
+  optional double speed = 2;
+  optional double spawn_rate = 3;
+}
+
+message ControlResponse {
+  bool running = 1;
+  double speed = 2;
+  double spawn_rate = 3;
+  int64 tick = 4;
+  int32 vehicle_count = 5;
+}
+
+service SimService {
+  rpc SubscribeFrames(SubscribeRequest) returns (stream Frame);
+  rpc Control(ControlRequest) returns (ControlResponse);
+}
