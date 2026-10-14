@@ -17,7 +17,7 @@ const state = {
   cars: new Map<number, Car>(),
   running: true,
   speed: 1,
-  spawnRate: 1, // cars/sec
+  spawnRate: 0.5, // cars/sec: matched to green capacity; raise for gridlock demo
   spawnAcc: 0,
   lastLoop: Date.now(),
 };

@@ -61,7 +61,7 @@ export function spawnCar(rng: () => number): Car {
   const seg0 = route[1] ?? route[0];
   return {
     id: nextId++,
-    v0: 8 + rng() * 8, // 8-16 m/s heterogeneous
+    v0: 10 + rng() * 8, // 10-18 m/s heterogeneous
     accel: 1.2 + rng() * 0.8,
     comfort: 1.8 + rng() * 0.8,
     headway: 0.8 + rng() * 0.6,

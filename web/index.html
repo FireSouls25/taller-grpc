@@ -10,11 +10,13 @@
     <div id="app">
       <div id="map"></div>
       <canvas id="cars"></canvas>
+      <canvas id="view3d"></canvas>
       <div id="hud">
         <div>
           <button id="btn-run">Pause</button>
+          <button id="btn-view">2D map</button>
           <label>speed <input id="in-speed" type="range" min="0.25" max="4" step="0.25" value="1" /></label>
-          <label>spawn <input id="in-spawn" type="range" min="0" max="4" step="0.5" value="1" /></label>
+          <label>demand <input id="in-spawn" type="range" min="0" max="4" step="0.5" value="0.5" /></label>
         </div>
         <div id="stats">connecting…</div>
         <div id="lights"></div>

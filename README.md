@@ -66,5 +66,7 @@ curl -X POST http://localhost:50061/traffic.signals.v1.SignalService/GetPhase \
 - Cars: kinematic-heterogeneous (`v0` 8–16 m/s), stop at red within
   braking distance or leader gap < 9 m. Poisson spawn at portals.
 - Renderer: MapLibre (OpenFreeMap liberty, no key) + canvas overlay for
-  grid/signals/cars. three.js 3D was cut for the 1–2 h budget; overlay
-  draws from the same `Frame` stream so a 3D layer can replace it.
+  grid/signals/cars, **plus a three.js 3D city** (default view): extruded
+  blocks, road grid with dashes, live signal poles, instanced 3D cars.
+  Toggle with the "2D map / 3D city" button. No-WebGL browsers get the
+  Canvas2D/raster fallback. Both 3D and 2D read the same `Frame` stream.
